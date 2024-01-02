@@ -6,6 +6,8 @@ function App() {
   const [isPwa, setIsPwa] = useState(false);
   const [installationStatus, setInstallationStatus] = useState('Checking...');
 
+  const [app, setApp] = useState<any>();
+
   useEffect(() => {
     const matchMedia = window.matchMedia('(display-mode: standalone)');
     matchMedia.addEventListener('change', (e) => {
@@ -29,6 +31,8 @@ function App() {
       setInstallationStatus(
         apps.length > 0 ? 'App is installed' : 'App is not installed'
       );
+
+      setApp(app);
     } catch (error) {
       console.error('Error checking for installed app:', error);
       setInstallationStatus('Unable to check installation status');
@@ -69,6 +73,7 @@ function App() {
 
         <p>{isPwa ? 'PWA' : 'Browser'}</p>
         <b>Installation status: {installationStatus}</b>
+        <p>{JSON.stringify(app)}</p>
       </div>
     </div>
   );
