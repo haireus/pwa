@@ -73,7 +73,7 @@ function App() {
 
         <p>{isPwa ? 'PWA' : 'Browser'}</p>
         <b>Installation status: {installationStatus}</b>
-        <p>{JSON.stringify(app)}</p>
+        <p>Text: {JSON.stringify(app)}</p>
       </div>
     </div>
   );
