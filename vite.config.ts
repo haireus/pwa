@@ -44,9 +44,8 @@ export default defineConfig({
         ],
         related_applications: [
           {
-            platform: 'android',
-            id: '/',
-            url: '/',
+            platform: 'webapp',
+            url: 'https://pwa-ruby-three.vercel.app/manifest.json',
           },
         ],
       },
