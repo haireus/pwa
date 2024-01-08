@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import bananas from './Bananas.svg';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [isPwa, setIsPwa] = useState(false);
   const [installationStatus, setInstallationStatus] = useState('Checking...');
+  const navigate = useNavigate();
 
   const [app, setApp] = useState<any>();
 
@@ -55,6 +57,10 @@ function App() {
         : 'App is likely not installed'
     );
   };
+
+  useEffect(() => {
+    if (isPwa) navigate('/mvpt');
+  }, [isPwa]);
 
   return (
     <div className='App'>
