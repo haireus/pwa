@@ -37,11 +37,13 @@ function App() {
         setInstallationStatus('IS installed');
       });
 
+      console.log(apps);
+
       // setInstallationStatus(
       //   apps.length > 0 ? 'App is installed' : 'App is not installed'
       // );
 
-      setApp(app);
+      setApp(apps);
     } catch (error) {
       console.error('Error checking for installed app:', error);
       setInstallationStatus('Unable to check installation status');
