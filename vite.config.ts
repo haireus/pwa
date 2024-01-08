@@ -42,12 +42,12 @@ export default defineConfig({
             type: 'image/png',
           },
         ],
-        // related_applications: [
-        //   {
-        //     platform: 'webapp',
-        //     url: 'https://pwa-ruby-three.vercel.app/manifest.json',
-        //   },
-        // ],
+        related_applications: [
+          {
+            platform: 'webapp',
+            url: 'https://pwa-ruby-three.vercel.app/manifest.json',
+          },
+        ],
       },
     }),
   ],

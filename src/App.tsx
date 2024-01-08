@@ -30,11 +30,16 @@ function App() {
   const checkInstallationWithGetInstalledRelatedApps = async () => {
     try {
       const apps = await (navigator as any).getInstalledRelatedApps();
-      console.log(apps);
 
-      setInstallationStatus(
-        apps.length > 0 ? 'App is installed' : 'App is not installed'
-      );
+      window.addEventListener('appinstalled', (evt) => {
+        console.log(evt, evt);
+
+        setInstallationStatus('IS installed');
+      });
+
+      // setInstallationStatus(
+      //   apps.length > 0 ? 'App is installed' : 'App is not installed'
+      // );
 
       setApp(app);
     } catch (error) {
