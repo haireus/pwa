@@ -30,6 +30,8 @@ function App() {
   const checkInstallationWithGetInstalledRelatedApps = async () => {
     try {
       const apps = await (navigator as any).getInstalledRelatedApps();
+      console.log(apps);
+
       setInstallationStatus(
         apps.length > 0 ? 'App is installed' : 'App is not installed'
       );
@@ -58,9 +60,10 @@ function App() {
     );
   };
 
-  useEffect(() => {
-    if (isPwa) navigate('/mvpt');
-  }, [isPwa]);
+  // useEffect(() => {
+  //   if (isPwa)
+  //     navigate('https://pwa-ruby-three.vercel.app/mvpt', { replace: true });
+  // }, [isPwa]);
 
   return (
     <div className='App'>
