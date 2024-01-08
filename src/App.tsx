@@ -9,10 +9,12 @@ function App() {
   const [app, setApp] = useState<any>();
 
   useEffect(() => {
-    const matchMedia = window.matchMedia('(display-mode: standalone)').matches;
-
-    setIsPwa(matchMedia); // Set initial state
-  }, [matchMedia]);
+    const matchMedia = window.matchMedia('(display-mode: standalone)');
+    matchMedia.addEventListener('change', (e) => {
+      setIsPwa(e.matches);
+    });
+    setIsPwa(matchMedia.matches); // Set initial state
+  }, []);
 
   useEffect(() => {
     // Check for supported methods:
