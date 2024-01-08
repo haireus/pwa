@@ -12,7 +12,7 @@ function App() {
     const matchMedia = window.matchMedia('(display-mode: standalone)').matches;
 
     setIsPwa(matchMedia); // Set initial state
-  }, []);
+  }, [matchMedia]);
 
   useEffect(() => {
     // Check for supported methods:
